@@ -5,7 +5,7 @@
 //Se construira el objeto llamado viaje
 //Primero se crea el parametro del tipo viaje, en este caso un arreglo ya que tiene varios atributos
 
-include "viaje.php";
+include "ClaseViaje.php";
 
 function cargarViaje(){
   	echo "cuantas viajes se van a realizar?: ";
