@@ -1,5 +1,6 @@
+
 <?php
-class ResponsableV{
+class Responsable{
     private $nombre;
     private $apellido;
     private $numEmpleado;
@@ -25,10 +26,10 @@ class ResponsableV{
     public function getApellido(){
         return $this->apellido;
     } 
-    public function getNumEmpleado(){
+    public function getNumEmpl(){
         return $this->numEmpleado;
     }
-    public function getNumLicencia(){
+    public function getNumLic(){
         return $this->numLicencia;
     }
 
@@ -42,10 +43,10 @@ class ResponsableV{
 
 	public function __toString()
 	{
-		return ("Responsable del viaje es: ".$this->getNombre()."\n".
+		return ("\nNombre : ".$this->getNombre()."\n".
 				"Apellido: ".$this->getApellido()."\n".
-				"Numero de empleado: ".$this->getNumEmpleado()."\n".
-				"Numero de licencia: ".$this->getNumLicencia()."\n");
+				"Numero de empleado: ".$this->getNumEmpl()."\n".
+				"Numero de licencia: ".$this->getNumLic()."\n");
 	}
 
 }
