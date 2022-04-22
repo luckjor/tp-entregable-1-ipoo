@@ -48,7 +48,41 @@ class Viaje{
   public function setCanMax($canMax){
     return $this->canMax = $canMax;
   }
+  public function verificarPasajero($dni){
+    $pasajeroMod = $this->getObjPasajeros();
+    $i = 0;
+    $existe = false;
+    if(count($pasajeroMod) > 0){
+        do{
+            if($pasajeroMod[$i]->getDni() == $dni){
+                $existe = true;
+            }else{
+            $i++;
+            }
+        }while(!$existe && ($i < count($pasajeroMod)));
+    }
+    return $existe;
+}
 
+//Esta funcion nos permite extraer el pasajero de una coleccion de pasajeros
+//localizandolo con su dni
+public function localizarPasajero($dni){
+  $pasajerosTotal = $this->getObjPasajeros();
+  $i = 0;
+  $pasajero = null;
+  $localizado = false;
+  if($this->verificarPasajero($dni)){
+      do{
+          if($pasajerosTotal[$i]->getDni() == $dni){
+              $localizado = true;
+              $pasajero = $pasajerosTotal[$i];
+          }else{
+              $i++;
+          }
+      }while(!$localizado && ($i < count($pasajerosTotal)));
+  }
+  return ($pasajero);
+}
   public function __toString(){
     return "DATOS DEL PASAJERO:".$this->getObjPasajeros()."/n".
     "El numero de codigo: ".$this->getCodigo()."\n".
