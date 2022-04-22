@@ -5,15 +5,18 @@ class Viaje{
   //Atrivutos
   private $codigo;
   private $destino;
-  private $pasajeros;
+  private $objPasajeros;
   private $canMax;
+  private $objResponsableV;
+  
   
   //Metodos
-  public function __construct($codigoEnt,$destinoEnt,$pasajerosEnt,$canMaxEnt){
-    $this->codigo = $codigoEnt;
-    $this->destino = $destinoEnt;
-    $this->pasajeros[] = $pasajerosEnt;
-    $this->canMax = $canMaxEnt;
+  public function __construct($codigo,$destino,$objPasajeros,$canMax,$objResponsableV){
+    $this->codigo = $codigo;
+    $this->destino = $destino;
+    $this->objPasajeros = $objPasajeros; 
+    $this->canMax = $canMax;
+    $this->objResponsableV = $objResponsableV;
   }
   public function getCodigo(){
     return $this->codigo;
@@ -21,27 +24,37 @@ class Viaje{
   public function getDestino(){
     return $this->destino;
   }
-  public function getPasajeros(){
-    return $this->pasajeros;
+  public function getObjPasajeros(){
+    return $this->objPasajeros;
   }
   public function getCanMax(){
     return $this->canMax;
   }
-  public function setCodigo($codigoEnt){
-    return $this->codigo = $codigoEnt;
+  public function getObjResponsableV(){
+    return $this->objResponsableV;
   }
-  public function setDestino($destinoEnt){
-    return $this->destino = $destinoEnt;
+  public function setCodigo($codigo){
+     $this->codigo = $codigo;
   }
-  public function setPasajeros($pasajerosEnt){
-    return $this->pasajeros = $pasajerosEnt;
+  public function setDestino($destino){
+     $this->destino = $destino;
   }
-  public function setCanMax($canMaxEnt){
-    return $this->canMax = $canMaxEnt;
+  public function setObjPasajeros($objPasajeros){
+     $this->objPasajeros = $objPasajeros;
   }
+  public function setObjResponsableV($objResponsableV){
+    $this->objResponsableV=$objResponsableV;
+  }
+  public function setCanMax($canMax){
+    return $this->canMax = $canMax;
+  }
+
   public function __toString(){
-    return "El numero de codigo: ".$this->getCodigo()."\nEl destino es: ".$this->getDestino()."\nPasajeros son: ".$this->getCanMax()."\n";
+    return "DATOS DEL PASAJERO:".$this->getObjPasajeros()."/n".
+    "El numero de codigo: ".$this->getCodigo()."\n".
+    "\nEl destino es: ".$this->getDestino()."\n".
+    "\nPasajeros son: ".$this->getCanMax()."\n".
+    "\nResponsable del Viaje: ".$this->getObjResponsableV()."\n";
   }
 }
 ?>
- 
