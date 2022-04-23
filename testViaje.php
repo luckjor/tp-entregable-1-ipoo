@@ -1,6 +1,7 @@
 <?php
 
-
+include "Pasajero.php";
+include "ResponsableV.php";
 include "Viaje.php";
 
 function existeViaje($viajes, $codigo){
