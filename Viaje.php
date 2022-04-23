@@ -1,6 +1,5 @@
 <?php
-include "Pasajero.php";
-include "ResponsableV.php";
+
 class Viaje{
   
         //Atrivutos
@@ -17,7 +16,7 @@ class Viaje{
           $this->destino = $destino;
           $this->cantMax = $cantMax;
           $this->objPasajeros =[]; 
-          $this->Responsable = new Responsable("","","","");
+          $this->Responsable = $Responsable;
         }
         public function getCodigo(){
           return $this->codigo;
